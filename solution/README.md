@@ -33,3 +33,14 @@ http://localhost:9300
 ```
 
 ## Part III
+
+* Run the csvserver with prometheus enabled with docker-compose
+```
+docker-compose up
+```
+
+* Try accessing the prometheus dashboard  and query with csvserver_records, user should be able to view the graph
+
+```
+http://localhost:9090
+```
