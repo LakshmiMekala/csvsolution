@@ -11,4 +11,18 @@ services:
       - ./inputFile:/csvserver/inputdata:rw  
 
 
+  prometheus:
+    image: prom/prometheus:v2.22.0
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheusdata:/prometheus
+      
+volumes:
+  prometheusdata:
 
